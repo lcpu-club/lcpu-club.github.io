@@ -1,0 +1,25 @@
+{{ define "main" }}
+
+<section id="single">
+    <h1 class="title">{{ .Title }}</h1>
+
+    {{ partial "tip" . }}
+
+    <article class="content">
+      {{  .Content }}
+    </article>
+
+    {{ with .Params.tags }}
+        <div class="tags">
+            {{ range . }}
+                <a href="{{ "tags/" | absURL }}{{ . | urlize }}">{{ . }}</a>
+            {{ end }}
+        </div>
+    {{ end }}
+    
+    {{ partial "comment.html" . }}
+
+</section>
+
+{{ end }}
+

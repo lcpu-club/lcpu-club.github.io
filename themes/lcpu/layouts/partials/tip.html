@@ -1,0 +1,32 @@
+<div class="tip">
+    <span>
+      {{ .Date.Format "2006/01/02" }}
+    </span>
+    <span class="split">
+      ·
+    </span>
+    <span>
+      {{ .Params.Author }}
+    </span>
+    {{ with .Params.Location }}
+      <span class="split">
+        ·
+      </span>
+      <span>
+        {{ . }}
+      </span>
+    {{ end }}
+    <!-- <span>
+      {{ if lt 1 .WordCount }}
+        {{ .WordCount }} words
+      {{ else }}
+          {{ .WordCount }} word
+      {{ end }}
+    </span>
+    <span class="split">
+      ·
+    </span>
+    <span>
+      {{ .ReadingTime }} minute read
+    </span> -->
+</div>
